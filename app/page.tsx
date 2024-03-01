@@ -8,7 +8,7 @@ const frameMetadata = getFrameMetadata({
     }
   ],
   image: `https://plum-peculiar-fox-986.mypinata.cloud/ipfs/Qme4FXhoxHHfyzTfRxSpASbMF8kajLEPkRQWhwWu9pkUjm/0.png`,
-  post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=1`,
+  post_url: `https://frames-js-sable.vercel.app//api/frame?id=1`,
 });
 
 export const metadata: Metadata = {

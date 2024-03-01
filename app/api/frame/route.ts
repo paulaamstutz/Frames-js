@@ -18,7 +18,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     <meta property="fc:frame:button:2:action" content="post_redirect" />
     <meta property="fc:frame:button:3" content="Video Tutorial" />
     <meta property="fc:frame:button:3:action" content="post_redirect" />
-    <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/end" />
+    <meta property="fc:frame:post_url" content="https://frames-js-sable.vercel.app/api/end" />
   </head></html>`);
   } else {
   return new NextResponse(`<!DOCTYPE html><html><head>
@@ -26,7 +26,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     <meta property="fc:frame" content="vNext" />
     <meta property="fc:frame:image" content="https://plum-peculiar-fox-986.mypinata.cloud/ipfs/Qme4FXhoxHHfyzTfRxSpASbMF8kajLEPkRQWhwWu9pkUjm/${id}.png" />
     <meta property="fc:frame:button:1" content="Next Page" />
-    <meta property="fc:frame:post_url" content="${process.env.NEXT_PUBLIC_BASE_URL}/api/frame?id=${nextId}" />
+    <meta property="fc:frame:post_url" content="https://frames-js-sable.vercel.app/api/frame?id=${nextId}" />
   </head></html>`);
   }
 }
