@@ -13,7 +13,7 @@ const frameMetadata = getFrameMetadata({
       label: "Third Choice",
     }
   ],
-  image: "/skillbuddy_canva.png",
+  image: "https://frame-warpcast.s3.eu-central-1.amazonaws.com/skillbuddy_canva.png",
   post_url: `https://frames-js-sable.vercel.app/api/frame?id=1`,
 });
 
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cosmic Cowboys',
     description: 'A frame telling the story of Cosmic Cowboys',
-    images: ["/skillbuddy_canva.png"],
+    images: ["https://frame-warpcast.s3.eu-central-1.amazonaws.com/skillbuddy_canva.png"],
   },
   other: {
     ...frameMetadata,
