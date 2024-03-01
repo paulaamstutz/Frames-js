@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: "FIrst Choice",
+      label: "First Choice",
     },
     {
       label: "Second Choice",
