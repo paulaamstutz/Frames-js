@@ -4,11 +4,17 @@ import type { Metadata } from 'next';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: "Begin"
+      label: "FIrst Choice",
+    },
+    {
+      label: "Second Choice",
+    },
+    {
+      label: "Third Choice",
     }
   ],
-  image: `https://plum-peculiar-fox-986.mypinata.cloud/ipfs/Qme4FXhoxHHfyzTfRxSpASbMF8kajLEPkRQWhwWu9pkUjm/0.png`,
-  post_url: `https://frames-js-sable.vercel.app//api/frame?id=1`,
+  image: "./skillbuddy_canva.png",
+  post_url: `https://frames-js-sable.vercel.app/api/frame?id=1`,
 });
 
 export const metadata: Metadata = {
@@ -17,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cosmic Cowboys',
     description: 'A frame telling the story of Cosmic Cowboys',
-    images: [`https://plum-peculiar-fox-986.mypinata.cloud/ipfs/Qme4FXhoxHHfyzTfRxSpASbMF8kajLEPkRQWhwWu9pkUjm/0.png`],
+    images: ["./skillbuddy_canva.png"],
   },
   other: {
     ...frameMetadata,
