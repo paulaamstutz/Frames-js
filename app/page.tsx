@@ -1,6 +1,11 @@
 import { getFrameMetadata } from '@coinbase/onchainkit';
+import { GetServerSideProps } from 'next';
 
-export default function Page({ id }: { id: any }) {
+interface PageProps {
+  id: string;
+}
+
+export default function Page({ id }: PageProps) {
   const frameMetadata = getFrameMetadata({
     buttons: [
       {
@@ -17,4 +22,13 @@ export default function Page({ id }: { id: any }) {
     post_url: `https://frames-js-sable.vercel.app/api/frame/${id}`,
   });
 
+  // rest of your component...
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const id = context.params ? context.params.id : null;
+
+  return {
+    props: { id }, // will be passed to the page component as props
+  };
 }
