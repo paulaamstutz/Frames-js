@@ -14,7 +14,7 @@ const frameMetadata = getFrameMetadata({
     }
   ],
   image: "https://frame-warpcast.s3.eu-central-1.amazonaws.com/skillbuddy_canva.png",
-  post_url: `https://frames-js-sable.vercel.app/api/frame?id=1`,
+  post_url: `https://frames-js-sable.vercel.app/api/frame/1`,
 });
 
 export const metadata: Metadata = {
