@@ -1,5 +1,6 @@
 import { getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
+import { useEffect } from 'react';
 
 const frameMetadata = getFrameMetadata({
   buttons: [
@@ -31,9 +32,23 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  useEffect(() => {
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach((button, index) => {
+      const actionUrlElement = document.querySelector(`meta[name="fc:frame:button:${index + 1}:action"]`);
+      const actionUrl = actionUrlElement?.getAttribute('content');
+      if (actionUrl) {
+        window.location.href = actionUrl;
+      }
+    });
+  }, []);
+
   return (
     <>
       <h1>SkillBuddy</h1>
+      <button>First Choice</button>
+      <button>Second Choice</button>
+      <button>Third Choice</button>
     </>
   );
 }
