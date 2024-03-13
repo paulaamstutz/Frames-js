@@ -1,4 +1,4 @@
-// pages/api/frame/[id].tsx
+// app/api/frame/[id].tsx
 
 import { NextApiRequest, NextApiResponse } from 'next';
 

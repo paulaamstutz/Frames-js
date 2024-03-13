@@ -1,34 +1,38 @@
 import { getFrameMetadata } from '@coinbase/onchainkit';
-import { GetServerSideProps } from 'next';
+import type { Metadata } from 'next';
 
-interface PageProps {
-  id: string;
-}
+const frameMetadata = getFrameMetadata({
+  buttons: [
+    {
+      label: "First Choice",
+    },
+    {
+      label: "Second Choice",
+    },
+    {
+      label: "Third Choice",
+    }
+  ],
+  image: "https://frame-warpcast.s3.eu-central-1.amazonaws.com/skillbuddy_canva.png",
+  post_url: `https://frames-js-sable.vercel.app/api/frame/`,
+});
 
-export default function Page({ id }: PageProps) {
-  const frameMetadata = getFrameMetadata({
-    buttons: [
-      {
-        label: "First Choice",
-      },
-      {
-        label: "Second Choice",
-      },
-      {
-        label: "Third Choice",
-      }
-    ],
-    image: "https://frame-warpcast.s3.eu-central-1.amazonaws.com/skillbuddy_canva.png",
-    post_url: `https://frames-js-sable.vercel.app/api/frame/${id}`,
-  });
+export const metadata: Metadata = {
+  title: 'SkillBuddy',
+  openGraph: {
+    title: 'Skillbuddy',
+    description: 'A frame telling the story of Cosmic Cowboys',
+    images: ["https://frame-warpcast.s3.eu-central-1.amazonaws.com/skillbuddy_canva.png"],
+  },
+  other: {
+    ...frameMetadata,
+  },
+};
 
-  // rest of your component...
-}
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const id = context.params ? context.params.id : null;
-
-  return {
-    props: { id }, // will be passed to the page component as props
-  };
+export default function Page() {
+  return (
+    <>
+      <h1>SkillBuddy</h1>
+    </>
+  );
 }
